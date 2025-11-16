@@ -1,0 +1,43 @@
+{
+  "version": 2,
+  "name": "hospital-management-system",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "headers": {
+        "cache-control": "s-maxage=31536000,immutable"
+      }
+    },
+    {
+      "src": "/service-worker.js",
+      "headers": {
+        "cache-control": "s-maxage=0"
+      }
+    },
+    {
+      "src": "/sockjs-node/(.*)",
+      "dest": "/sockjs-node/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }
+}

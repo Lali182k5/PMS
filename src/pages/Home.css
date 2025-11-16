@@ -1,0 +1,88 @@
+/* Main container with full-screen background */
+.home-header {
+  background-image: url('C:\Users\likhi\EXTRA\hospitalapp\public\patient3.jpg'); /* served from public/ folder at the site root */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;      /* Align vertically to top */
+  justify-content: flex-end;    /* Align horizontally to right */
+  padding: 40px 60px;
+  text-align: right;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Text block animation */
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  opacity: 0;
+  animation: fadeSlideIn 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Welcome text */
+.welcome-text {
+  color:black;
+  font-size: 2rem;
+  font-weight: 600;
+  transform: translate(30px, -30px);
+  animation: slideText 1.2s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+/* Title text */
+.title-3d {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color:black;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  transform: translate(30px, -30px);
+  animation: slideText 1.4s ease-out forwards;
+  animation-delay: 0.7s;
+  opacity: 0;
+}
+
+/* Keyframe for the content block fade+slide */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translate(50px, -50px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+/* Text entrance animation */
+@keyframes slideText {
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-header {
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .header-content {
+    align-items: center;
+  }
+
+  .welcome-text,
+  .title-3d {
+    font-size: 1.6rem;
+  }
+}

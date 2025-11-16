@@ -1,0 +1,152 @@
+/* =========================================
+   MOTION EFFECTS DEMONSTRATION
+   Advanced Side-to-Side Transitions
+   ======================================== */
+
+.motion-demo-container {
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f0f8ff, #e6f0ff, #ffffff);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.motion-showcase {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.motion-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 50px;
+  animation: titleMotionEntry 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.motion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.motion-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+  transform: translateX(var(--initial-x, 100px)) rotateY(var(--initial-rotate, 15deg));
+}
+
+.motion-card.visible {
+  opacity: 1;
+  transform: translateX(0) rotateY(0deg);
+}
+
+.motion-card:nth-child(odd) {
+  --initial-x: -120px;
+  --initial-rotate: -15deg;
+}
+
+.motion-card:nth-child(even) {
+  --initial-x: 120px;
+  --initial-rotate: 15deg;
+}
+
+.motion-card:hover {
+  transform: translateY(-10px) scale(1.05) rotateY(2deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.motion-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.motion-example {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+  animation: motionBubbleEntry 0.6s ease forwards;
+}
+
+.motion-example:nth-child(1) { animation-delay: 0.1s; }
+.motion-example:nth-child(2) { animation-delay: 0.2s; }
+.motion-example:nth-child(3) { animation-delay: 0.3s; }
+.motion-example:nth-child(4) { animation-delay: 0.4s; }
+.motion-example:nth-child(5) { animation-delay: 0.5s; }
+
+.motion-example:hover {
+  transform: scale(1.2) rotateZ(15deg);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+}
+
+/* Motion Keyframes */
+@keyframes titleMotionEntry {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px) rotateY(-30deg) scale(0.8);
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(20px) rotateY(5deg) scale(1.1);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes motionBubbleEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.5) rotate(180deg);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateY(-10px) scale(1.2) rotate(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .motion-title {
+    font-size: 2rem;
+  }
+  
+  .motion-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .motion-examples {
+    gap: 15px;
+  }
+  
+  .motion-example {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+}

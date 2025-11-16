@@ -1,0 +1,14 @@
+/* Layout container for sidebar + main content */
+.layout-container {
+  display: flex;
+}
+
+/* Main content area pushed right to make space for sidebar */
+.main-content {
+  margin-left: 250px; /* Must match sidebar width */
+  padding: 20px;
+  background-color: #f4f6f9;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}

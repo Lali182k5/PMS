@@ -1,0 +1,145 @@
+.appointment-container {
+  background: #f0f4f8;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.appointment-container h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.appointment-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.appointment-container input[type="text"],
+.appointment-container input[type="date"] {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.appointment-container button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.appointment-container button:hover {
+  background-color: #0056b3;
+}
+
+.appointment-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.appointment-container li {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.appointment-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+/* 👉 New styles for actions section */
+.appointment-actions {
+  margin-top: 6px;
+  display: flex;
+  gap: 1rem;
+}
+
+.appointment-actions a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.appointment-actions a:hover {
+  color: #0056b3;
+}
+.form-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.grid-2-cols {
+  display: flex;
+  gap: 20px;
+}
+
+.grid-2-cols input,
+.grid-2-cols select {
+  flex: 1;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  resize: vertical;
+}
+
+.upload-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.submit-btn, .cancel-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #e0e0e0;
+  color: #333;
+}

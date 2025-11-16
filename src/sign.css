@@ -1,0 +1,100 @@
+/* Scoped only to Signup page */
+.signup-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #fceabb, #f8b500, #fceabb, #f76b1c);
+  background-size: 400% 400%;
+  animation: bgAnimation 15s ease infinite;
+}
+
+.auth-container {
+  background-color: #ffffffcc;
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+.auth-container h2 {
+  font-size: 28px;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-container input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.auth-container input:focus {
+  border-color: #f76b1c;
+  outline: none;
+  box-shadow: 0 0 5px rgba(247, 107, 28, 0.3);
+}
+
+.auth-container button {
+  padding: 12px;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.auth-container button:hover {
+  background: linear-gradient(to right, #e02454, #b51753);
+}
+
+.auth-container p {
+  margin-top: 1rem;
+  font-size: 14px;
+  color: #444;
+}
+
+.auth-container a {
+  color: #e02454;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
+
+/* Background animation */
+@keyframes bgAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Entry animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
