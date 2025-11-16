@@ -6,7 +6,7 @@ A modern, responsive hospital management system built with React.js, featuring g
 
 ## 🚀 Live Demo
 
-**Deployed on Vercel:** [Visit Live Application](https://your-app-url.vercel.app)
+**Deployed on Vercel:** [Visit Live Application](https://pms-medicare.vercel.app/)
 
 ## ✨ Features
 
